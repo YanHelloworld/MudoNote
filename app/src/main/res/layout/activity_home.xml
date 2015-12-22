@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:id="@+id/fl_home_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/maincolor_thr" >
+
+        <include layout="@layout/comview_titlebar" />
+
+        <RelativeLayout
+            android:id="@+id/rl_titlelayout_note"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <Button
+                android:id="@+id/iv_titlebar_calender"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_margin="@dimen/margin_normal"
+                android:background="@color/colorful_pink"
+                android:text="日历" />
+
+            <Button
+                android:id="@+id/iv_titlebar_find"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_margin="@dimen/margin_normal"
+                android:layout_toRightOf="@id/iv_titlebar_calender"
+                android:background="@color/colorful_green"
+                android:text="查找" />
+
+            <Button
+                android:id="@+id/iv_titlebar_tocreate"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_margin="@dimen/margin_normal"
+                android:background="@color/colorful_yellow"
+                android:text="新建" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_titlelayout_netnote"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <Button
+                android:id="@+id/iv_titlebar_info"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_margin="@dimen/margin_normal"
+                android:background="@color/colorful_yellow"
+                android:text="信息" />
+        </RelativeLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_home_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+    </FrameLayout>
+
+    <RadioGroup
+        android:id="@+id/rg_home_changefragment"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:weightSum="3" >
+
+        <RadioButton
+            android:id="@+id/rb_home_note"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorful_green"
+            android:button="@null"
+            android:checked="true"
+            android:gravity="center"
+            android:text="日记" />
+
+        <RadioButton
+            android:id="@+id/rb_home_netnote"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorful_blue_light"
+            android:button="@null"
+            android:gravity="center"
+            android:text="过客" />
+
+        <RadioButton
+            android:id="@+id/rb_home_setting"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorful_orange"
+            android:button="@null"
+            android:gravity="center"
+            android:text="我的" />
+    </RadioGroup>
+
+</LinearLayout>

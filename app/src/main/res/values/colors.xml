@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorful_blue">#0080FF</color>
+	<color name="colorful_green">#35C87A</color>
+	<color name="colorful_green_dark">#1D6478</color>
+	<color name="colorful_red">#FE6553</color>
+	<color name="colorful_blue_light">#53C5E7</color>
+	<color name="colorful_blue_dark">#48608E</color>
+	<color name="colorful_yellow">#FEE79B</color>
+	<color name="colorful_green_light">#94CF01</color>
+	<color name="colorful_orange">#F78B26</color>
+	<color name="colorful_pink">#F6A0BB</color>
+	<color name="colorful_green_ddark">#34BC98</color>
+	<color name="colorful_gray">#909E9F</color>
+	
+	<color name="maincolor_one">#ECFBFF</color>
+	<color name="maincolor_two">#CCF2FF</color>
+	<color name="maincolor_thr">#74E8FF</color>
+	<color name="maincolor_fou">#03CBFF</color>
+	<color name="maincolor_fiv">#00BDFF</color>
+	<color name="maincolor_six">#009CFF</color>
+</resources>

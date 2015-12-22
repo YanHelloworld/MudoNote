@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MudoNote</string>
+    <string name="hello_world">Hello world!</string>
+    
+    <string name="register">注册</string>
+    <string name="login">登录</string>
+
+</resources>
