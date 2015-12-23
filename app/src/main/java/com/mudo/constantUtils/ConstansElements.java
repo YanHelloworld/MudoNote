@@ -7,9 +7,9 @@ public class ConstansElements {
 
     public static final String TAG = "mudonote:";
 
-    public static final String debugUrl = "http://192.168.1.63:8080/MudoHttpHelperWeb/servlet/MudoHttpHelperWebServlet?name=tom";
+    private static final String debugUrl = "http://192.168.1.63:8080/MudoHttpHelperWeb/servlet/MudoHttpHelperWebServlet";
 
-    public static final String Url = "http://192.168.1.63:8080/MudoHttpHelperWeb/servlet/MudoHttpHelperWebServlet?name=tom";
+    private static final String Url = "http://192.168.1.63:8080/MudoHttpHelperWeb/servlet/MudoHttpHelperWebServlet";
 
     private  static boolean flag_isproduct = false;// true为正式环境,false为测试环境
 

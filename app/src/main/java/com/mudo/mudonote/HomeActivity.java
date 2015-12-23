@@ -10,6 +10,7 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Intent;
+import android.content.SyncStatusObserver;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -36,12 +37,13 @@ public class HomeActivity extends Activity {
     private FrameLayout fl_title;
 
 
-    Handler handler = new Handler(){
+    Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
 
-            //ToastHelper.show(HomeActivity.this,"访问网络获取的数据："+msg.obj.toString());
+            ToastHelper.show(HomeActivity.this, "访问网络获取的数据：" + msg.obj.toString());
+
         }
     };
 
@@ -57,8 +59,13 @@ public class HomeActivity extends Activity {
 
         initListener();
 
-       /* HttpHelper http = new HttpHelper(this,handler);
-        http.sendGet("");*/
+        netApply();
+
+    }
+
+    public void netApply() {
+        HttpHelper helper = new HttpHelper(HomeActivity.this, handler);
+        helper.sendPost("", "ddddddddddddddddddddddddddddddddddddddddd");
     }
 
     public void initLayout() {
