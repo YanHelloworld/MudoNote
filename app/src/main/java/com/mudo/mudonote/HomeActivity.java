@@ -4,6 +4,7 @@ import com.mudo.fragment.NetNoteFragment;
 import com.mudo.fragment.NoteFragment;
 import com.mudo.fragment.SettingFragment;
 import com.mudo.utils.HttpHelper;
+import com.mudo.utils.JsonParseHelper;
 import com.mudo.utils.ToastHelper;
 
 import android.app.Activity;
@@ -22,6 +23,8 @@ import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
+
+import org.xutils.http.RequestParams;
 
 
 public class HomeActivity extends Activity {
@@ -64,8 +67,19 @@ public class HomeActivity extends Activity {
     }
 
     public void netApply() {
+
+
+        // TODO 请求bean文件，转换成json数据
+
+        RequestParams params = new RequestParams();
+        params.setConnectTimeout(5000);
+
+        String JsonPara = JsonParseHelper.bean2json(params);
+
+
         HttpHelper helper = new HttpHelper(HomeActivity.this, handler);
-        helper.sendPost("", "ddddddddddddddddddddddddddddddddddddddddd");
+        helper.sendPost("存放接口数据,例如：/order/get", JsonPara);
+
     }
 
     public void initLayout() {

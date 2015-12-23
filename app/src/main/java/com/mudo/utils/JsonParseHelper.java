@@ -13,10 +13,11 @@ public class JsonParseHelper {
 
 
 
+
         return null;
     }
 
-    public static <T>T  json2bean(String str){
+    public static Object json2bean(String str){
 
 
 
