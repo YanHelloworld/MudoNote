@@ -1,7 +1,6 @@
 package com.mudo.utils;
 
 import android.content.Context;
-import android.content.SyncStatusObserver;
 import android.os.Handler;
 import android.os.Message;
 
@@ -13,6 +12,9 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+
+// TODO interface，可以在servlet中新建不同的servlet，访问地址不同，来进行不同的请求并返回数据
+// TODO 例如http://192.168.1.63:8080/Projectname/servlet/(不同的请求servletname,即为接口名称)
 
 public class HttpHelper {
 
@@ -74,8 +76,8 @@ public class HttpHelper {
                     e.printStackTrace();
                 } catch (IOException e) {
                     e.printStackTrace();
-                }finally {
-                    if(conn != null){
+                } finally {
+                    if (conn != null) {
                         conn.disconnect();
                     }
                 }
@@ -86,7 +88,7 @@ public class HttpHelper {
     }
 
 
-    public void sendPost(String interfaceStr,final String paraStr) {
+    public void sendPost(String interfaceStr, final String paraJsonStr) {
         final String path = ConstansElements.BaseUrl() + interfaceStr;
 
         new Thread(new Runnable() {
@@ -107,11 +109,11 @@ public class HttpHelper {
                     conn.setRequestProperty("contentType", "application/x-www-form-urlencoded");
 
                     // 可以将所有的请求数据保存在jsonstr中，在servlet里面获取到该json字符串，然后对json字符串进行解析，进行相应的处理
-                    String para = "json=" + paraStr;
+                    // servlet中可以实现，PHP做后台的话，不确定如何接收到数据
 
-                    conn.setRequestProperty("Content-Length", String.valueOf(para.getBytes().length));
+                    conn.setRequestProperty("Content-Length", String.valueOf(paraJsonStr.getBytes().length));
                     conn.setDoOutput(true);
-                    conn.getOutputStream().write(para.getBytes());
+                    conn.getOutputStream().write(paraJsonStr.getBytes());
                     conn.connect();
 
                     if (conn.getResponseCode() == 200) {
@@ -137,7 +139,6 @@ public class HttpHelper {
                     } else {
                         //连接失败
                     }
-
 
                 } catch (MalformedURLException e) {
                     e.printStackTrace();

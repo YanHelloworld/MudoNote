@@ -1,5 +1,6 @@
 package com.mudo.mudonote;
 
+import com.mudo.bean.RequestTest;
 import com.mudo.fragment.NetNoteFragment;
 import com.mudo.fragment.NoteFragment;
 import com.mudo.fragment.SettingFragment;
@@ -45,7 +46,13 @@ public class HomeActivity extends Activity {
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
 
-            ToastHelper.show(HomeActivity.this, "访问网络获取的数据：" + msg.obj.toString());
+
+            String result = msg.obj.toString();
+
+            // 直接将json字符串解析出来放入接收的bean中
+            RequestTest resultpara = JsonParseHelper.json2bean(result, RequestTest.class);
+
+            ToastHelper.show(HomeActivity.this,resultpara.toString());
 
         }
     };
@@ -71,14 +78,15 @@ public class HomeActivity extends Activity {
 
         // TODO 请求bean文件，转换成json数据
 
-        RequestParams params = new RequestParams();
-        params.setConnectTimeout(5000);
+        RequestTest params = new RequestTest();
+        params.setId(1);
+        params.setName("Martin");
+        params.setPassword("123");
 
-        String JsonPara = JsonParseHelper.bean2json(params);
-
+        String jsonstr = JsonParseHelper.bean2json(params);
 
         HttpHelper helper = new HttpHelper(HomeActivity.this, handler);
-        helper.sendPost("存放接口数据,例如：/order/get", JsonPara);
+        helper.sendPost("", jsonstr); //第一个参数填写接口名，第二个参数填写请求json字符串
 
     }
 
