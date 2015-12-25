@@ -19,6 +19,7 @@ import java.net.URL;
 public class HttpHelper {
 
     // Xutils暂时不稳定，直接用HttpUrlConnection实现
+    // TODO 连接网络的时候，需要progressbar进行进度提示类似
 
 
     private Context mContext;
@@ -145,7 +146,7 @@ public class HttpHelper {
                 } catch (IOException e) {
                     e.printStackTrace();
                 } finally {
-                    //6.释放资源
+                    // 释放资源
                     if (conn != null) {
                         //关闭连接 即设置 http.keepAlive = false;
                         conn.disconnect();
