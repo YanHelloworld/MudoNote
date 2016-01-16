@@ -25,9 +25,6 @@ import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-import org.xutils.http.RequestParams;
-
-
 public class HomeActivity extends Activity {
 
     private RadioGroup rg_choose;

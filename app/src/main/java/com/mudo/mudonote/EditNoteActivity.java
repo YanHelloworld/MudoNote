@@ -17,6 +17,7 @@ public class EditNoteActivity extends Activity {
 		setContentView(R.layout.activity_editnote);
 		
 		initTitle();
+
 	}
 	
 	public void initTitle(){
